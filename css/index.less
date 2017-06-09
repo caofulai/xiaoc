@@ -1,0 +1,365 @@
+/************通用样式************/
+*{
+  font:16px Arial;
+  box-sizing: border-box;
+}
+body{
+  background:#eee;
+}
+h1,h2,h3,h4,h5,h6{
+  margin:0;
+}
+a{
+  color:#fff;
+  text-decoration: none;
+}
+a:hover{
+  color:#fff;
+  text-decoration: none;
+}
+
+
+/*******************顶部*******************/
+#header{
+  padding:0 30px;
+}
+#top{
+  perspective:1000px;
+  svg{
+    width:140px;
+    height:36px;
+    animation:transform 2s linear infinite;
+    -moz-animation:transform 2s linear infinite;
+    -o-animation:transform 2s linear infinite;
+    -webkit-animation:transform 2s linear infinite;
+  }
+
+  @keyframes transform {
+    0%{
+      transform:rotateX(0);
+      -webkit-transform:rotateX(0);
+      -moz-transform:rotateX(0);
+      -o-transform:rotateX(0);
+    }
+    25%{
+      transform:rotateX(270deg);
+      -webkit-transform:rotateX(270deg);
+      -moz-transform:rotateX(270deg);
+      -o-transform:rotateX(270deg);
+    }
+    50%{
+      transform:rotateX(315deg);
+      -webkit-transform:rotateX(315deg);
+      -moz-transform:rotateX(315deg);
+      -o-transform:rotateX(315deg);
+    }
+    75%{
+      transform:rotateX(360deg);
+      -webkit-transform:rotateX(360deg);
+      -moz-transform:rotateX(360deg);
+      -o-transform:rotateX(360deg);
+    }
+    100%{
+      transform:rotateX(360deg);
+      -webkit-transform:rotateX(360deg);
+      -moz-transform:rotateX(360deg);
+      -o-transform:rotateX(360deg);
+    }
+  }
+  b{
+    display:inline-block;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:#f00;
+    margin-bottom:12px;
+  }
+  .b1{
+    animation:transform1 2s ease-out infinite;
+    -o-animation:transform1 2s ease-out infinite;
+    -moz-animation:transform1 2s ease-out infinite;
+    -webkit-animation:transform1 2s ease-out infinite;
+  }
+  .b2{
+    animation:transform2 2s ease-out infinite;
+    -o-animation:transform2 2s ease-out infinite;
+    -moz-animation:transform2 2s ease-out infinite;
+    -webkit-animation:transform2 2s ease-out infinite;
+  }
+  /*****定义动画*****/
+  @keyframes transform1{
+    0%{
+      transform:translateX(0);
+      -webkit-transform:translateX(0);
+      -moz-transform:translateX(0);
+      -o-transform:translateX(0);
+    }
+    50%{
+      transform:translateX(-25px);
+      -webkit-transform:translateX(-25px);
+      -moz-transform:translateX(-25px);
+      -o-transform:translateX(-25px);
+    }
+    100%{
+      transform:translateX(0);
+      -webkit-transform:translateX(0);
+      -moz-transform:translateX(0);
+      -o-transform:translateX(0);
+    }
+  }
+  @keyframes transform2{
+    0%{
+      transform:translateX(0);
+      -webkit-transform:translateX(0);
+      -moz-transform:translateX(0);
+      -o-transform:translateX(0);
+    }
+    50%{
+      transform:translateX(25px);
+      -webkit-transform:translateX(25px);
+      -moz-transform:translateX(25px);
+      -o-transform:translateX(25px);
+    }
+    100%{
+      transform:translateX(0);
+      -webkit-transform:translateX(0);
+      -moz-transform:translateX(0);
+      -o-transform:translateX(0);
+    }
+  }
+}
+
+/********************左侧滑出菜单*********************/
+#left-side{
+  width:200px;
+  height:300px;
+  padding:20px;
+  position:fixed;
+  top:50%;
+  left:0;
+  z-index: 10;
+  transform:translate(0,-50%);
+  background:purple;
+  margin-left:-190px;
+  transition:all .3s linear;
+  >div{
+    b{
+      display:inline-block;
+      width:36px;
+      height:36px;
+      background:url(../images/logo.png) no-repeat;
+    }
+    >div{
+      a{
+        display:inline-block;
+        i{
+          display:block;
+          width:30PX;
+          height:1px;
+          border:1px solid #fff;
+          margin:5px 0;
+        }
+      }
+      a:first-child{
+        float:left;
+        margin-left:30px;
+        margin-top:16px;
+      }
+      a:last-child{
+        float:right;
+        margin-top:10px;
+        margin-right:30px;
+      }
+    }
+    >ul{
+      margin-top:50px;
+      overflow: hidden;
+      height:160px;
+      transition:all .5s linear;
+      li{
+        margin-left:20px;
+        line-height:2em;
+        position:relative;
+        a{
+          font-size:1.2em;
+          position:absolute;
+          top:0;
+          left:40px;
+          opacity:0;
+          transition:all .5s linear;
+        }
+        a.active{
+          left:0;
+          opacity:1;
+        }
+      }
+    }
+    >ul.active{
+      height:0;
+    }
+  }
+}
+#left-side:hover{
+  margin-left:0;
+}
+
+/******************右侧指南***********************/
+.right-side{
+  width:50px;
+  height:300px;
+  position:fixed;
+  top:50%;
+  right:0;
+  z-index: 10;
+  //transform:translate(0,-50%);
+  background:darken(#0f0,30%);
+  .tel{
+    height:60px;
+    line-height:60px;
+  }
+  .qq{
+    height:60px;
+    line-height:60px;
+  }
+  .weixin{
+    height:120px;
+    line-height:120px;
+  }
+  .back{
+    height:60px;
+    line-height:60px;
+    font-size:2em;
+    font-weight:bold;
+    color:#000;
+  }
+}
+
+/*******************导航条*********************/
+
+#nav{
+  background:darken(#152C55,-5%);
+  margin-top:36px;
+  border-width:0;
+  z-index: 9999;
+  a{
+    color:#fff;
+    font-weight:bold;
+    display:block;
+    width:80px;
+    padding:15px 0 ;
+    b{
+      display:inline-block;
+      width:0;
+      margin-right:6px;
+      margin-bottom:5px;
+      transition:all .3s linear;
+      -o-transition:all .3s linear;
+      -webkit-transition:all .3s linear;
+      -moz-transition:all .3s linear;
+    }
+  }
+  a:hover>b{
+    padding-left:20px;
+    border:1px solid #fff;
+    //width:20px;
+  }
+}
+
+/********************主体内容***************************/
+#v1{
+  display:block;
+  width:80%;
+  margin:0 auto;
+  position:relative;
+  z-index: -1;
+  color:#f00;
+  font-weight:bold;
+}
+#main{
+  position:relative;
+  margin-top:46px;
+  min-height:1000px;
+  img{
+    width:100%;
+  }
+  .modal-lg{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.7);
+  }
+  .txtShow{
+    padding:40px 0;
+    p{
+      font-size:2em;
+    }
+    h1{
+      font-size:3em;
+      margin:20px 0;
+      b{
+        font-size:1em;
+      }
+    }
+  }
+
+}
+
+
+
+
+
+
+/****************底部*********************/
+#footer{
+  background:darken(#152C55,-5%);
+  height:80px;
+  p{
+    height:80px;
+    line-height:80px;
+    color:#fff;
+    font-weight:bold;
+  }
+}
+
+
+/**************Vue中的transition***************/
+
+.box{
+  width:100%;
+  //height:100%;
+  //background:#f00;
+  //text-align:center;
+  //line-height:200px;
+  //color:#fff;
+  opacity:1;
+  margin-left:0;
+}
+.box-enter-active,.box-leave-active{
+  transition:all .8s;
+}
+.box-enter{
+  opacity:0;
+  margin-left:100%;
+}
+.box-leave-active{
+  opacity:0;
+  margin-left:-100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

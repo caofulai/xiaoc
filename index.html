@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+    <head lang="zh-cn">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+        <meta http-equiv="x-ua-compatible" content="IE=edge"/>
+        <title>xiaoc</title>
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv.min.js"></script>
+            <script src="js/respond.min.js"></script>
+        <![endif]-->
+        <link rel="stylesheet" href="css/bootstrap.css"/>
+        <!--引入Vue文件-->
+        <script src="js/vue.js"></script>
+        <script src="js/vue-router.js"></script>
+        <script src="js/vue-resource.js"></script>
+        <link rel="stylesheet" href="css/index.css"/>
+
+    </head>
+    <body>
+
+        <div id="template" class="app">
+
+            <!--头部-->
+            <header id="header" class="container">
+                <div id="top">
+                    <b class="b1"></b>
+                    <svg id="s1">
+                        <defs>
+                            <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="red"></stop>
+                                <stop offset="17%" stop-color="orange"></stop>
+                                <stop offset="34%" stop-color="blue"></stop>
+                                <stop offset="51%" stop-color="green"></stop>
+                                <stop offset="68%" stop-color="cyan"></stop>
+                                <stop offset="85%" stop-color="blue"></stop>
+                                <stop offset="100%" stop-color="purple"></stop>
+                            </linearGradient>
+                            <!--<radialGradient id="g2">-->
+                            <!--</radialGradient>-->
+                        </defs>
+                        <text alignment-baseline="before-edge"  fill="url(#g1)" x="7" y="10">Welcome to xiaoc</text>
+                    </svg>
+                    <b class="b2"></b>
+                </div>
+            </header>
+            <!--左侧滑出菜单-->
+            <div id="left-side" @mouseenter="mouseEnt" @mouseleave="mouseLea">
+                <div class="text-center">
+                    <b></b>
+                    <div>
+                        <a href="#">菜单</a>
+                        <a href="#" class="menu" @click="menuClick">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </a>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="#" class="active">首页</a>
+                            <a href="#" class="eng">home</a>
+                        </li>
+                        <li>
+                            <a href="#"  class="active">简介</a>
+                            <a href="#" class="eng">brief</a>
+                        </li>
+                        <li>
+                            <a href="#"  class="active">工作</a>
+                            <a href="#" class="eng">worker</a>
+                        </li>
+                        <li>
+                            <a href="#"  class="active">技能</a>
+                            <a href="#" class="eng">skills</a>
+                        </li>
+                        <li>
+                            <a href="#"  class="active">联系</a>
+                            <a href="#" class="eng">contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--右侧固定指南-->
+            <div class="right-side text-center">
+                <div class="tel">
+                    <img src="images/mynum.png" alt=""/>
+                </div>
+                <div class="qq">
+                    <img src="images/myqq.png" alt=""/>
+                </div>
+                <div class="weixin">
+                    <img src="images/wxs1.png" alt=""/>
+                </div>
+                <div class="back">↑</div>
+            </div>
+            <!--固定的导航-->
+            <div id="nav" class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a href="#" class="navbar-brand">xiaoc</a>
+                        <button type="button" class="btn navbar-toggle" data-toggle="collapse" data-target="#myCollapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="myCollapse" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="#/myStart"><b></b>首页</a>
+                            </li>
+                            <li>
+                                <a href="#/myBrief"><b></b>简介</a>
+                            </li>
+                            <li>
+                                <a href="#/myWorker"><b></b>工作</a>
+                            </li>
+                            <li>
+                                <a href="#/mySkill"><b></b>技能</a>
+                            </li>
+                            <li>
+                                <a href="#/myContact"><b></b>联系</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--内容-->
+            <section id="main">
+                <router-view></router-view>
+            </section>
+
+            <footer class="foot">
+
+            </footer>
+
+            <!--底部-->
+            <footer id="footer">
+                <p class="text-center">地址：北京市海淀区 xiaoc科技</p>
+            </footer>
+
+        </div>
+
+        <script src="js/jquery-1.11.3.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/index.js"></script>
+
+
+        <!--创建组件start-->
+        <script type="text/x-template" id="start-template">
+            <div class="box">
+                <!--视频背景-->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <video id="v1" src="res/mov1.mp4" autoplay loop>您的浏览器不支持video</video>
+                        <div class="modal-lg">
+
+                        </div>
+                    </div>
+                </div>
+                <!--文字展示-->
+                <div class="row text-center txtShow">
+                    <div class="col-md-2 col-md-offset-3">
+                        <h1><b>3</b>年</h1>
+                        <p>工作年限</p>
+                    </div>
+                    <div class="col-md-2">
+                        <h1><b>12</b>项</h1>
+                        <p>掌握技能</p>
+                    </div>
+                    <div class="col-md-2">
+                        <h1><b>10</b>大方向</h1>
+                        <p>发展目标</p>
+                    </div>
+                </div>
+                <!--图文-->
+                <div class="row">
+                    <div class="col">
+                        <img src="images/myAbout_03.jpg" alt=""/>
+                    </div>
+                </div>
+            </div>
+        </script>
+        <!--创建组件brief-->
+        <script type="text/x-template" id="brief-template">
+            <div class="box">
+                <div id="brief">
+                    <h1 class="text-center mt">网站简介</h1>
+                    <div class="text-center">
+                        <p>本网站于2017年5月正式创建，是个人的一个开发网站，目前处于成长阶段，未来发展任重道远。</p>
+                        <div>
+                            <b>本站声明：</b>
+                            <p>此网站目前不用于任何商业用途！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </script>
+        <!--创建组件worker-->
+        <script type="text/x-template" id="worker-template">
+            <div class="box">
+                <h1>工作</h1>
+            </div>
+        </script>
+        <!--创建组件skill-->
+        <script type="text/x-template" id="skill-template">
+            <div class="box">
+                <h1>技能</h1>
+            </div>
+        </script>
+        <!--创建组件Contact-->
+        <script type="text/x-template" id="contact-template">
+            <div class="box">
+                <h1>联系我</h1>
+            </div>
+        </script>
+
+        <script>
+
+            //创建start组件
+            var Start=Vue.component("start",{
+                template:"#start-template"
+            });
+            //创建brief组件
+            var Brief=Vue.component("brief",{
+                template:"#brief-template"
+            });
+            //创建worker组件
+            var Worker=Vue.component("worker",{
+                template:"#worker-template"
+            });
+            //创建skill组件
+            var Skill=Vue.component("skill",{
+                template:"#skill-template"
+            });
+            //创建contact组件
+            var Contact=Vue.component("contact",{
+                template:"#contact-template"
+            });
+
+            //配置路由
+            var myRoutes=[
+                {
+                    path:"/",
+                    component:Start
+                },
+                {
+                    path:"/myStart",
+                    component:Start
+                },
+                {
+                    path:"/myBrief",
+                    component:Brief
+                },
+                {
+                    path:"/myWorker",
+                    component:Worker
+                },
+                {
+                    path:"/mySkill",
+                    component:Skill
+                },
+                {
+                    path:"/myContact",
+                    component:Contact
+                },
+                {
+                    path:"/*",
+                    component:Start
+                }
+            ];
+
+            var myRouter = new VueRouter({
+                routes:myRoutes
+            });
+
+            new Vue({
+                el:"#template",
+                router:myRouter,
+                data:{
+                    showBox:true
+                },
+                methods:{
+                    menuClick:function(e){
+                        console.log(e);
+                        e.preventDefault();
+                        //找到ul
+                        var ul=document.querySelector("#left-side ul");
+                        if(ul.className==""){
+                            ul.className="active";
+                        }else{
+                            ul.className="";
+                        }
+
+                    },
+                    mouseEnt:function(){
+                        //为ul中的a添加鼠标移入事件
+                        $("#left-side li").on("mouseenter","a.active",function(){
+
+                            $(this).removeClass("active").siblings().css({
+                                left:0,
+                                opacity:1
+                            });
+
+                        });
+
+                    },
+                    mouseLea:function(){
+
+                        $("#left-side li").on("mouseleave","a.eng",function(){
+                            if(this.className=="eng"){
+                                $(this).css({
+                                    left:"40px",
+                                    opacity:0
+                                }).siblings().addClass("active");
+                            }
+                        });
+                    }
+                }
+            });
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
