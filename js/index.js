@@ -94,43 +94,7 @@
     }
 })();
 
-////为左侧滑出菜单添加按钮点击事件
-//(function(){
-//    //找到a按钮
-//    console.log("1");
-//    var a=document.querySelector(".menu");
-//    //console.log(a);
-//    a.onclick=function(){
-//        //找到ul
-//        var ul=document.querySelector("#left-side ul");
-//        if(ul.className==""){
-//            ul.className="active";
-//        }else{
-//            ul.className="";
-//        }
-//
-//    };
-//
-//    //为ul中的a添加鼠标移入事件
-//    $("#left-side li").on("mouseenter","a.active",function(){
-//
-//        $(this).removeClass("active").siblings().css({
-//            left:0,
-//            opacity:1
-//        });
-//
-//    });
-//
-//    $("#left-side li").on("mouseleave","a",function(){
-//        if(this.className==""){
-//            $(this).css({
-//                left:"40px",
-//                opacity:0
-//            }).siblings().addClass("active");
-//        }
-//    });
-//
-//})();
+
 
 
 

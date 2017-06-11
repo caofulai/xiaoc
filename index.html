@@ -62,16 +62,16 @@
                             <a href="#" class="eng">home</a>
                         </li>
                         <li>
-                            <a href="#"  class="active">简介</a>
-                            <a href="#" class="eng">brief</a>
-                        </li>
-                        <li>
-                            <a href="#"  class="active">工作</a>
-                            <a href="#" class="eng">worker</a>
+                            <a href="#"  class="active">关于</a>
+                            <a href="#" class="eng">about</a>
                         </li>
                         <li>
                             <a href="#"  class="active">技能</a>
                             <a href="#" class="eng">skills</a>
+                        </li>
+                        <li>
+                            <a href="#"  class="active">评价</a>
+                            <a href="#" class="eng">evaluate</a>
                         </li>
                         <li>
                             <a href="#"  class="active">联系</a>
@@ -110,13 +110,13 @@
                                 <a href="#/myStart"><b></b>首页</a>
                             </li>
                             <li>
-                                <a href="#/myBrief"><b></b>简介</a>
-                            </li>
-                            <li>
-                                <a href="#/myWorker"><b></b>工作</a>
+                                <a href="#/myAbout"><b></b>关于</a>
                             </li>
                             <li>
                                 <a href="#/mySkill"><b></b>技能</a>
+                            </li>
+                            <li>
+                                <a href="#/myEvaluate"><b></b>评价</a>
                             </li>
                             <li>
                                 <a href="#/myContact"><b></b>联系</a>
@@ -181,37 +181,167 @@
                 </div>
             </div>
         </script>
-        <!--创建组件brief-->
-        <script type="text/x-template" id="brief-template">
+        <!--创建组件about-->
+        <script type="text/x-template" id="about-template">
             <div class="box">
-                <div id="brief">
-                    <h1 class="text-center mt">网站简介</h1>
-                    <div class="text-center">
-                        <p>本网站于2017年5月正式创建，是个人的一个开发网站，目前处于成长阶段，未来发展任重道远。</p>
-                        <div>
-                            <b>本站声明：</b>
-                            <p>此网站目前不用于任何商业用途！</p>
+                <div id="about">
+                    <h1 class="text-center mt">关于我</h1>
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+                            <b>2014年8月-2016年6月&nbsp;&nbsp;呼伦贝尔市天邻电子科技有限公司&nbsp;&nbsp;后台维护</b><br/>
+                            <b>岗位职责：</b>
+                            <ol>
+                                <li>负责公司的宣传与推广，公司相关信息的更新。</li>
+                                <li>负责客户网页的后台维护与管理，根据客户需求更新内容，协助推广。</li>
+                                <li>定期给客户做回访，搜集客户反馈并总结，发现问题及时与客户联系协商。</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+                            <b>2016年7月-2017年5月&nbsp;&nbsp;内蒙古科技信息网络技术研究中心&nbsp;&nbsp;前端工程师</b><br/>
+                            <b>岗位职责：</b>
+                            <ol>
+                                <li>负责公司项目的前端页面开发。</li>
+                                <li>根据产品需求，分析并给出最优的前端页面结构解决方案并完成效果实现。</li>
+                                <li>负责前端页面开发制作和维护，配合后台开发人员实现页面，界面相关功能。</li>
+                                <li>根据功能需求，定义和优化产品用户体验及交互效果。</li>
+                            </ol>
                         </div>
                     </div>
                 </div>
             </div>
         </script>
-        <!--创建组件worker-->
-        <script type="text/x-template" id="worker-template">
-            <div class="box">
-                <h1>工作</h1>
-            </div>
-        </script>
         <!--创建组件skill-->
         <script type="text/x-template" id="skill-template">
             <div class="box">
-                <h1>技能</h1>
+                <div id="stage">
+                    <div id="box">
+                        <div class="o">
+                            <div class="i">
+                                <h2>BootStrap</h2>
+                                <a href="#">去看看</a>
+                            </div>
+                        </div>
+                        <div class="o">
+                            <div class="i">
+                                <h2>jQuery</h2>
+                                <a href="#">去看看</a>
+                            </div>
+                        </div>
+                        <div class="o">
+                            <div class="i">
+                                <h2>AngularJS</h2>
+                                <a href="#">去看看</a>
+                            </div>
+                        </div>
+                        <div class="o">
+                            <div class="i">
+                                <h2>Inoic</h2>
+                                <a href="#">去看看</a>
+                            </div>
+                        </div>
+                        <div class="o">
+                            <div class="i">
+                                <h2>React</h2>
+                                <a href="#">去看看</a>
+                            </div>
+                        </div>
+                        <div class="o">
+                            <div class="i">
+                                <h2>Vue</h2>
+                                <a href="#">去看看</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="d2" class="svg">
+                    <svg id="s1" width="76%" height="500px">
+                        <!--绘制参考线-->
+                        <g stroke="#aaa" stroke-linecap="round">
+                            <line x1="50" y1="350" x2="850" y2="350"></line>
+                            <line x1="50" y1="250" x2="850" y2="250"></line>
+                            <line x1="50" y1="150" x2="850" y2="150"></line>
+                            <line x1="50" y1="50" x2="850" y2="50"></line>
+                        </g>
+                        <!--绘制坐标线-->
+                        <line x1="50" y1="470" x2="50" y2="20" stroke="#f00" stroke-width="3"></line>
+                        <line x1="30" y1="450" x2="870" y2="450" stroke="#f00" stroke-width="3"></line>
+                        <!--绘制箭头-->
+                        <polyline points="850,460 870,450 850,440" fill="transparent" stroke="#f00" stroke-width="3"></polyline>
+                        <polyline points="40,40 50,20 60,40" fill="transparent" stroke="#f00" stroke-width="3"></polyline>
+                        <!--绘制柱子-->
+                        <rect id="r1" width="60" height="360" fill="#faa" fill-opacity=".3" stroke="#800" stroke-opacity=".3" x="100" y="90"></rect>
+                        <rect id="r2" width="60" height="380" fill="#ffa" fill-opacity=".3" stroke="#800" stroke-opacity=".3" x="220" y="70"></rect>
+                        <rect id="r3" width="60" height="300" fill="#0aa" fill-opacity=".3" stroke="#800" stroke-opacity=".3" x="340" y="150"></rect>
+                        <rect id="r4" width="60" height="240" fill="#0ff" fill-opacity=".3" stroke="#800" stroke-opacity=".3" x="460" y="210"></rect>
+                        <rect id="r5" width="60" height="200" fill="#f0a" fill-opacity=".3" stroke="#800" stroke-opacity=".3" x="580" y="250"></rect>
+                        <rect id="r6" width="60" height="300" fill="#a3f" fill-opacity=".3" stroke="#800" stroke-opacity=".3" x="700" y="150"></rect>
+                        <!--绘制文本-->
+                        <text font-size="50" alignment-baseline="before-edge" x="95" y="460">BootStrap</text>
+                        <text font-size="50" alignment-baseline="before-edge" x="223" y="460">jQuery</text>
+                        <text font-size="50" alignment-baseline="before-edge" x="331" y="460">AngularJS</text>
+                        <text font-size="50" alignment-baseline="before-edge" x="472" y="460">Ionic</text>
+                        <text font-size="50" alignment-baseline="before-edge" x="588" y="460">React</text>
+                        <text font-size="50" alignment-baseline="before-edge" x="710" y="460">Vue</text>
+                        <!--值-->
+                        <text font-size="50" alignment-baseline="before-edge" x="30" y="430">0</text>
+                        <text font-size="50" alignment-baseline="before-edge" x="30" y="340">2</text>
+                        <text font-size="50" alignment-baseline="before-edge" x="30" y="240">4</text>
+                        <text font-size="50" alignment-baseline="before-edge" x="30" y="140">6</text>
+                        <text font-size="50" alignment-baseline="before-edge" x="30" y="40">8</text>
+
+                    </svg>
+                </div>
+            </div>
+        </script>
+        <!--创建组件evaluate-->
+        <script type="text/x-template" id="evaluate-template">
+            <div class="box">
+                <h2 class="text-center">个人评价</h2>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-12">
+                        <ol>
+                            <li>具有前端工作经验，熟悉项目流程，工作能快速上手。</li>
+                            <li>能快速适应新环境，对工作态度积极，有上进心。</li>
+                            <li>希望在北京工作，能有展示自己的舞台，为公司带来价值。</li>
+                            <li>不喜欢跳槽。</li>
+                        </ol>
+                    </div>
+                </div>
             </div>
         </script>
         <!--创建组件Contact-->
         <script type="text/x-template" id="contact-template">
-            <div class="box">
-                <h1>联系我</h1>
+            <div class="box ">
+                <h1 class="contactMe text-center">联系我</h1>
+                <div class="row">
+                    <div class="info col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-xs-12">
+                        <h2 class="text-center">曹福来</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>
+                                    <b>tel:</b>
+                                    <span>15101120203</span>
+                                </p>
+                                <p>
+                                    <b>github:</b>
+                                    <span>https://github.com/caofulai</span>
+                                </p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>
+                                    <b>email:</b>
+                                    <span>caofulai000@163.com</span>
+                                </p>
+                                <p>
+                                    <b>sae:</b>
+                                    <span>http://xiaoc.applinzi.com/</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </script>
 
@@ -221,17 +351,17 @@
             var Start=Vue.component("start",{
                 template:"#start-template"
             });
-            //创建brief组件
-            var Brief=Vue.component("brief",{
-                template:"#brief-template"
+            //创建About组件
+            var About=Vue.component("about",{
+                template:"#about-template"
             });
-            //创建worker组件
-            var Worker=Vue.component("worker",{
-                template:"#worker-template"
-            });
-            //创建skill组件
+            //创建Skill组件
             var Skill=Vue.component("skill",{
                 template:"#skill-template"
+            });
+            //创建evaluate组件
+            var Evaluate=Vue.component("evaluate",{
+                template:"#evaluate-template"
             });
             //创建contact组件
             var Contact=Vue.component("contact",{
@@ -249,16 +379,16 @@
                     component:Start
                 },
                 {
-                    path:"/myBrief",
-                    component:Brief
-                },
-                {
-                    path:"/myWorker",
-                    component:Worker
+                    path:"/myAbout",
+                    component:About
                 },
                 {
                     path:"/mySkill",
                     component:Skill
+                },
+                {
+                    path:"/myEvaluate",
+                    component:Evaluate
                 },
                 {
                     path:"/myContact",

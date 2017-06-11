@@ -9,6 +9,9 @@ body{
 h1,h2,h3,h4,h5,h6{
   margin:0;
 }
+//ul,li{
+//  list-style: none;
+//}
 a{
   color:#fff;
   text-decoration: none;
@@ -278,7 +281,7 @@ a:hover{
 #main{
   position:relative;
   margin-top:46px;
-  min-height:1000px;
+  min-height:500px;
   img{
     width:100%;
   }
@@ -305,11 +308,123 @@ a:hover{
   }
 
 }
-
-
-
-
-
+/*******************skills页面********************/
+/*****旋转区*****/
+#stage{
+  min-height:400px;
+  background:darken(#333439,-10%);
+  perspective:5000px;
+  -webkit-perspective:5000px;
+  #box{
+    position:relative;
+    transform-style:preserve-3d;
+    animation:rot 20s linear infinite;
+    height:400px;
+    .o{
+      width:240px;
+      height:160px;
+      position:absolute;
+      top:120px;
+      left:500px;
+      font-size:50px;
+      font-weight:bold;
+      color:#fff;
+      text-align:center;
+      line-height:200px;
+      .i{
+        width:80%;
+        height:60%;
+        background:#444;
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        h2{
+          margin:10px 0;
+        }
+        a{
+          display:inline-block;
+          color:#fff;
+          padding:5px 20px;
+          background:#1b6d85;
+          text-decoration:none;
+          border-radius:5px;
+        }
+        a:hover{
+          background:#c7254e;
+        }
+      }
+    }
+    .o:first-child{
+      background:rgba(255,0,0,.2);
+      transform:translatez(300px);
+    }
+    .o:nth-child(2){
+      background:rgba(0,255,0,.2);
+      transform:rotatey(60deg) translatez(300px);
+    }
+    .o:nth-child(3){
+      background:rgba(0,0,255,.2);
+      transform:rotatey(120deg) translatez(300px);
+    }
+    .o:nth-child(4){
+      background:rgba(255,255,0,.2);
+      transform:rotatey(180deg) translatez(300px);
+    }
+    .o:nth-child(5){
+      background:rgba(255,0,255,.2);
+      transform:rotatey(240deg) translatez(300px);
+    }
+    .o:last-child{
+      background:rgba(0,255,255,.2);
+      transform:rotatey(300deg) translatez(300px);
+    }
+  }
+}
+/**/
+@keyframes rot{
+  0%{
+    transform:rotateY(0deg);
+  }
+  25%{
+    transform:rotateY(90deg);
+  }
+  50%{
+    transform:rotateY(180deg);
+  }
+  75%{
+    transform:rotateY(270deg);
+  }
+  100%{
+    transform:rotateY(360deg);
+  }
+}
+/**svg**/
+.svg{
+  svg{
+    display:block;
+    background:#ddd;
+    margin:0 auto;
+  }
+}
+/************************联系页面****************************/
+.contactMe{
+  padding-top:20px;
+}
+.info{
+  margin-top:20px;
+  height:200px;
+  border:1px solid #aaa;
+  padding:0;
+  h2{
+    background:#a3f;
+    color:#fff;
+    padding:10px 0;
+  }
+  b{
+    font-size:1.5em;
+  }
+}
 
 /****************底部*********************/
 #footer{
@@ -324,29 +439,6 @@ a:hover{
 }
 
 
-/**************Vue中的transition***************/
-
-.box{
-  width:100%;
-  //height:100%;
-  //background:#f00;
-  //text-align:center;
-  //line-height:200px;
-  //color:#fff;
-  opacity:1;
-  margin-left:0;
-}
-.box-enter-active,.box-leave-active{
-  transition:all .8s;
-}
-.box-enter{
-  opacity:0;
-  margin-left:100%;
-}
-.box-leave-active{
-  opacity:0;
-  margin-left:-100%;
-}
 
 
 
